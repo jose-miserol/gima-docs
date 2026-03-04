@@ -62,14 +62,10 @@ export default async function RootLayout({
             <body className={inter.className}>
                 <Layout
                     banner={banner}
-                    navbar={navbar}
                     pageMap={await getPageMap()}
-                    docsRepositoryBase="https://github.com/your-org/max-attendance-control/edit/main/apps/website2"
+                    docsRepositoryBase="https://github.com/jose-miserol/gima-docs"
                     footer={footer}
                     sidebar={{ defaultMenuCollapseLevel: 1 }}
-                    toc={{ title: 'En esta página' }}
-                    editLink="Editar esta página →"
-                    feedback={{ content: '¿Preguntas? Envíanos feedback →' }}
                 >
                     {children}
                 </Layout>
