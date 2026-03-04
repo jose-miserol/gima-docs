@@ -1,0 +1,20 @@
+{
+  "index": {
+    "title": "GIMA Docs",
+    "type": "page"
+  },
+  "getting-started": "🚀 Getting Started",
+  "conceptos": "🧠 Conceptos Fundamentales",
+  "backend": "🔧 Backend Guide (Laravel)",
+  "ai-chatbot": "💬 AI Chatbot Guide (Next.js)",
+  "frontend": "🎨 Frontend Guide",
+  "seguridad": "🛡️ Seguridad",
+  "funcionalidades": "🚀 Funcionalidades Core",
+  "performance": "⚡ Performance y Escalabilidad",
+  "deployment": "🚢 Deployment y DevOps",
+  "api-reference": "📖 API Reference",
+  "casos-estudio": "📊 Casos de Estudio",
+  "roadmap": "🔮 Roadmap y Futuro",
+  "apendices": "📎 Apéndices",
+  "manual-sistemas-temario": "📘 Temario Completo"
+}

@@ -1,0 +1,69 @@
+# Referencia de Rutas API
+
+Este archivo define todas las rutas protegidas y públicas del sistema GIMA. Utiliza autenticación vía **Laravel Sanctum**.
+
+## Estructura de Endpoints
+
+### Autenticación
+
+- `POST /autenticacion/iniciar-sesion`: Login de usuario.
+- `POST /autenticacion/registrar`: Registro de nuevos usuarios.
+- `POST /autenticacion/recuperar-password`: Recuperación mediante PIN.
+
+### Administración (`/admin`)
+
+- `direcciones`: Gestión de sedes.
+- `auditorias`: Logs del sistema.
+- `ubicaciones`: Gestión de espacios físicos.
+- `users`: Gestión de personal y roles.
+
+### Mantenimiento (`/mantenimiento`)
+
+- `calendario`: Programación de preventivos.
+- `reportes`: Fallas notificadas por usuarios.
+- `mantenimientos`: Órdenes de trabajo.
+- `sesiones`: Jornadas de técnicos.
+- `repuestos-usados`: Consumo de materiales.
+
+### Inventario (`/inventario`)
+
+- `proveedores`: Directorio de contactos.
+- `repuestos`: Catálogo de piezas.
+- `stock`: Control de niveles de inventario.
+
+## Código de Rutas (Laravel)
+
+```php
+<?php
+
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
+// ... Controllers ...
+
+Route::middleware('auth:sanctum')->group(function () {
+
+    // --- Modulo GIMA: Admin ---
+    Route::prefix('admin')->group(function () {
+        Route::apiResource('direcciones', DireccionController::class);
+        Route::apiResource('auditorias', HistorialLogsController::class);
+        Route::apiResource('ubicaciones', UbicacionController::class);
+        Route::apiResource('users', UserController::class);
+    });
+
+    // --- Modulo: Mantenimiento ---
+    Route::prefix('mantenimiento')->group(function () {
+        Route::apiResource('calendario', CalendarioMantenimientoController::class);
+        Route::apiResource('reportes', ReporteController::class);
+        Route::apiResource('mantenimientos', MantenimientoController::class);
+        Route::apiResource('sesiones', SesionesMantenimientoController::class);
+        Route::apiResource('repuestos-usados', RepuestoUsadoController::class);
+    });
+
+    // --- Modulo: Inventario ---
+    Route::prefix('inventario')->group(function () {
+        Route::apiResource('proveedores', ProveedorController::class);
+        Route::apiResource('repuestos', RepuestoController::class);
+        Route::get('stock', [RepuestoController::class, 'indexStock']);
+    });
+});
+```

@@ -1,0 +1,40 @@
+/* Sidebar Glass Style - Primary Style */
+
+/* Base transitions */
+aside {
+  transition: all 0.3s ease-in-out;
+}
+
+/* =========================================
+   Glass Sidebar (Primary Style)
+   Focus: Aesthetics, translucent, floating
+   ========================================= */
+
+/* Light mode */
+aside {
+  background: rgba(255, 255, 255, 0.7) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  border-right: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 20px 0 40px rgba(0, 0, 0, 0.02);
+}
+
+/* Dark mode */
+.dark aside {
+  background: rgba(10, 10, 10, 0.7) !important;
+  border-right: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 20px 0 40px rgba(0, 0, 0, 0.1);
+}
+
+/* Active item: Soft glow background */
+[data-active="true"] {
+  background: rgba(16, 185, 129, 0.15) !important;
+  backdrop-filter: blur(5px);
+  border-radius: 8px;
+  color: #10b981 !important;
+}
+
+.dark [data-active="true"] {
+  background: rgba(16, 185, 129, 0.2) !important;
+  color: #34d399 !important;
+}

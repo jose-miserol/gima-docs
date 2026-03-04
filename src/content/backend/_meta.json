@@ -1,0 +1,30 @@
+{
+  "api-routes": "Referencia de Rutas",
+  "api-overview-and-contracts": "API Overview",
+  "backend-coding-standards": "Coding Standards",
+  "backend-async-architecture": "Async Architecture",
+  "backend-async-jobs-reference": "Jobs Reference",
+  "backend-critical-paths": "Critical Paths",
+  "backend-testing-strategy": "Testing Strategy",
+  "---": {
+    "type": "separator"
+  },
+  "Activo": "Modelo: Activo",
+  "Articulo": "Modelo: Articulo",
+  "Mantenimiento": "Modelo: Mantenimiento",
+  "Repuesto": "Modelo: Repuesto",
+  "User": "Modelo: Usuario",
+  "Reporte": "Modelo: Reporte",
+  "CalendarioMantenimiento": "Modelo: Calendario",
+  "SesionesMantenimiento": "Modelo: Sesiones",
+  "HistorialLogs": "Modelo: Auditoría Logs",
+  "---2": {
+    "type": "separator"
+  },
+  "Direccion": "Modelo: Sede / Dirección",
+  "Ubicacion": "Modelo: Ubicación",
+  "Proveedor": "Modelo: Proveedor",
+  "MaterialArticulo": "Modelo: Materiales",
+  "RepuestoUsado": "Modelo: Repuestos Usados",
+  "Notificacion": "Modelo: Notificación"
+}

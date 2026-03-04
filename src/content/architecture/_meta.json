@@ -1,0 +1,8 @@
+{
+  "architecture-roadmap-mapping": "Roadmap Mapping",
+  "phase-document-matrix": "Phase Matrix",
+  "architecture-decision-index": "ADR Index",
+  "c4-system-context": "C4 System Context",
+  "c4-container-diagram": "C4 Containers",
+  "security-threat-model": "Threat Model"
+}

@@ -1,0 +1,8 @@
+{
+  "service-slo-definitions": "SLO Definitions",
+  "deployment-guide": "Deployment Guide",
+  "operations-runbooks": "Runbooks",
+  "disaster-recovery-runbook": "Disaster Recovery",
+  "observability-and-monitoring": "Observability",
+  "scaling-and-capacity-planning": "Scaling"
+}
