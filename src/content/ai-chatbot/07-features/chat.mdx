@@ -1,4 +1,4 @@
-# 13 — Feature: Chat Principal (`features/chat/`)
+# Feature: Chat Principal (`features/chat/`)
 
 > El módulo más grande del proyecto. Contiene 14 archivos + 5 hooks + 5 archivos de tipos. Es la interfaz completa del chat con IA.
 
@@ -63,7 +63,9 @@ useChatKeyboard({ onSubmit: ..., onCancelVoice: ..., onFocusInput: ... });
 useEffect(() => {
   // Cuando termina de grabar, verificar si dijo un comando
   if ((isGeminiFinish || isNativeFinish) && transcript.trim().length > 5) {
-    const result = await executeVoiceCommand(transcript, { minConfidence: 0.6 });
+    const result = await executeVoiceCommand(transcript, {
+      minConfidence: 0.6,
+    });
     if (result.success && result.command) {
       setDetectedCommand(result.command); // ← Muestra alerta para confirmar
     }

@@ -1,0 +1,16 @@
+{
+  "01-arquitectura": "Arquitectura del Chatbot",
+  "02-api-chat": "API del Chat",
+  "03-server-actions": "Server Actions",
+  "04-servicios-ia": {
+    "title": "Servicios Ia"
+  },
+  "05-hooks": "Custom Hooks",
+  "06-componentes": {
+    "title": "Componentes"
+  },
+  "07-features": {
+    "title": "Features"
+  },
+  "08-configuracion": "Configuración"
+}

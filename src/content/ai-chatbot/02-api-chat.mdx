@@ -1,4 +1,4 @@
-# 03 — API del Chat (`api/chat/route.ts`)
+# API del Chat (`api/chat/route.ts`)
 
 > Es un Controlador de Interfaz de Programación de Aplicaciones (API Route o Endpoint) alojado y ejecutado exclusivamente en el lado del servidor de Next.js, funcionando como el "cerebro backend" que centraliza todo el tráfico de mensajes conversacionales. Sirve para orquestar un conducto completo de extremo a extremo: intercepta la solicitud del usuario (cuando presiona "Enviar"), ejecuta estrictos filtros de ciberseguridad (límite de peticiones por IP, limpieza de código malicioso, validaciones JSON), transmite el mensaje purificado de forma segura al proveedor de IA y, finalmente, implementa una conexión de transmisión continua (streaming SSE) para despachar sin retraso la respuesta del asistente de regreso al navegador web. Existe principalmente por una razón crítica de arquitectura y ciberseguridad: las credenciales privadas (API Keys) de GROQ y Google Gemini cuestan dinero y son altamente confidenciales. Si nos conectáramos a la IA directamente desde los componentes React en el navegador, cualquier persona inspeccionando la página podría robarlas; por tanto, este archivo conforma un muro protector ("servidor intermediario seguro") donde esos secretos nunca son accesibles para el cliente.
 
@@ -48,7 +48,7 @@ Cliente (navegador)                    Servidor (Next.js)
 ### Imports — Las Herramientas que Usa
 
 ```typescript
-import { NextResponse } from 'next/server';
+import { NextResponse } from "next/server";
 ```
 
 **¿Qué es?** `NextResponse` es la clase de Next.js para crear respuestas HTTP con headers, status codes, y body estructurado. Es como `res.json()` de Express pero más moderno y tipado.
@@ -56,7 +56,11 @@ import { NextResponse } from 'next/server';
 **¿Para qué lo usa?** Para devolver respuestas de error (400, 429, 500) en formato JSON con headers apropiados.
 
 ```typescript
-import { ChatService, RateLimitError, ValidationError } from '@/app/lib/services/chat-service';
+import {
+  ChatService,
+  RateLimitError,
+  ValidationError,
+} from "@/app/lib/services/chat-service";
 ```
 
 **¿Qué es?** `ChatService` es la clase que contiene toda la lógica de procesamiento del chat. `RateLimitError` y `ValidationError` son clases de error personalizadas que el servicio lanza cuando algo sale mal.
@@ -64,7 +68,7 @@ import { ChatService, RateLimitError, ValidationError } from '@/app/lib/services
 **¿Por qué errores separados?** Porque cada tipo de error necesita una respuesta HTTP diferente. Un rate limit devuelve 429 con header `Retry-After`, mientras que un error de validación devuelve 400 con los detalles del problema.
 
 ```typescript
-import { extractClientIP, createInvalidIPResponse } from '@/app/lib/ip-utils';
+import { extractClientIP, createInvalidIPResponse } from "@/app/lib/ip-utils";
 ```
 
 **¿Qué es?** Funciones utilitarias para extraer la dirección IP real del usuario desde los headers HTTP del request.
@@ -91,7 +95,7 @@ export const maxDuration = 30; // seconds
 
 ```typescript
 const clientIP = extractClientIP(req, {
-  allowLocalhost: env.NODE_ENV === 'development',
+  allowLocalhost: env.NODE_ENV === "development",
 });
 
 if (!clientIP) {
@@ -114,7 +118,10 @@ let rawBody: unknown;
 try {
   rawBody = await req.json();
 } catch {
-  return NextResponse.json({ error: 'Invalid JSON in request body' }, { status: 400 });
+  return NextResponse.json(
+    { error: "Invalid JSON in request body" },
+    { status: 400 },
+  );
 }
 ```
 
@@ -180,14 +187,14 @@ if (error instanceof ValidationError) {
 ### Paso 5 — Error Genérico (Fallback)
 
 ```typescript
-logger.error('Error en API de chat', error, {
-  component: 'ChatAPIRoute',
-  action: 'POST',
+logger.error("Error en API de chat", error, {
+  component: "ChatAPIRoute",
+  action: "POST",
 });
 
 return NextResponse.json(
   { error: ERROR_MESSAGES.PROCESSING_ERROR, details: errorMessage },
-  { status: 500 }
+  { status: 500 },
 );
 ```
 
@@ -210,10 +217,10 @@ function createRateLimitResponse(retryAfterSeconds: number): NextResponse {
     {
       status: 429,
       headers: {
-        'Retry-After': retryAfterSeconds.toString(),
-        'X-RateLimit-Remaining': '0',
+        "Retry-After": retryAfterSeconds.toString(),
+        "X-RateLimit-Remaining": "0",
       },
-    }
+    },
   );
 }
 ```

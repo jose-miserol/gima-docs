@@ -1,4 +1,4 @@
-# 04 — Server Actions
+# Server Actions
 
 > Las Server Actions son funciones que viven en el servidor pero se pueden llamar directamente desde componentes React del cliente. Son el puente entre la UI y la IA.
 
@@ -30,19 +30,19 @@ Contiene dos funciones principales (`transcribeAudio()` y `executeVoiceCommand()
 ### `transcribeAudio()` — De Audio a Texto
 
 ```typescript
-'use server'; // ← NUNCA se envía al navegador
+"use server"; // ← NUNCA se envía al navegador
 
 export async function transcribeAudio(
   audioDataUrl: string, // Audio en base64 (ej: "data:audio/webm;base64,...")
-  mimeType: string = 'audio/webm' // Tipo por defecto
+  mimeType: string = "audio/webm", // Tipo por defecto
 ): Promise<{ text: string; success: boolean; error?: string }>;
 ```
 
 **Paso 1 — Extraer el contenido base64**
 
 ```typescript
-const base64Content = audioDataUrl.includes('base64,')
-  ? audioDataUrl.split('base64,').pop() || ''
+const base64Content = audioDataUrl.includes("base64,")
+  ? audioDataUrl.split("base64,").pop() || ""
   : audioDataUrl;
 ```
 
@@ -53,7 +53,9 @@ const base64Content = audioDataUrl.includes('base64,')
 ```typescript
 const sizeInBytes = getBase64Size(base64Content);
 if (sizeInMB > MAX_AUDIO_SIZE_MB) {
-  throw new Error(`Audio demasiado grande (${sizeInMB}MB). Máximo: ${MAX_AUDIO_SIZE_MB}MB`);
+  throw new Error(
+    `Audio demasiado grande (${sizeInMB}MB). Máximo: ${MAX_AUDIO_SIZE_MB}MB`,
+  );
 }
 ```
 
@@ -63,14 +65,14 @@ if (sizeInMB > MAX_AUDIO_SIZE_MB) {
 
 ```typescript
 const result = await generateText({
-  model: google('gemini-2.5-flash-lite'), // Modelo ligero para velocidad
+  model: google("gemini-2.5-flash-lite"), // Modelo ligero para velocidad
   temperature: 0, // Sin creatividad = transcripción literal
   messages: [
     {
-      role: 'user',
+      role: "user",
       content: [
-        { type: 'text', text: VOICE_PROMPT }, // Instrucciones de transcripción
-        { type: 'file', data: base64Content, mediaType: mimeType }, // El audio
+        { type: "text", text: VOICE_PROMPT }, // Instrucciones de transcripción
+        { type: "file", data: base64Content, mediaType: mimeType }, // El audio
       ],
     },
   ],
@@ -85,9 +87,9 @@ const result = await generateText({
 
 ```typescript
 const cleanText = result.text
-  .replace(/\d{1,2}:\d{2}/g, '') // Quita timestamps como "00:00", "01:23"
-  .replace(/\n+/g, ' ') // Junta líneas en una sola
-  .replace(/\s+/g, ' ') // Elimina espacios dobles
+  .replace(/\d{1,2}:\d{2}/g, "") // Quita timestamps como "00:00", "01:23"
+  .replace(/\n+/g, " ") // Junta líneas en una sola
+  .replace(/\s+/g, " ") // Elimina espacios dobles
   .trim();
 ```
 
@@ -119,14 +121,14 @@ Define la función `analyzePartImage()` que actúa como un puente directo hacia 
 
 ```typescript
 const result = await generateText({
-  model: google('gemini-2.5-flash'), // ← Flash completo (no lite), porque visión necesita más poder
+  model: google("gemini-2.5-flash"), // ← Flash completo (no lite), porque visión necesita más poder
   temperature: 0.2, // ← Un poco de creatividad para descripciones
   messages: [
     {
-      role: 'user',
+      role: "user",
       content: [
-        { type: 'text', text: customPrompt || INVENTORY_PROMPT },
-        { type: 'file', data: base64Content, mediaType: mediaType },
+        { type: "text", text: customPrompt || INVENTORY_PROMPT },
+        { type: "file", data: base64Content, mediaType: mediaType },
       ],
     },
   ],
@@ -154,7 +156,7 @@ model: google('gemini-2.5-flash'),  // Flash soporta hasta 1M tokens, ideal para
 Es una Server Action dedicada a la generación automática de listas de verificación (checklists) de mantenimiento guiadas por IA. Sirve para que, a partir de una simple descripción del equipo dada por el usuario, el sistema retorne un checklist técnico, profesional y paso a paso. Existe como interfaz de seguridad para esconder la lógica de negocio compleja del `ChecklistAIService` y asegurar que la generación inteligente de estas listas ocurra en el entorno seguro del backend.
 
 ```typescript
-'use server';
+"use server";
 
 const checklistService = new ChecklistAIService();
 
@@ -189,7 +191,7 @@ Constituye la Server Action estructuralmente más compleja del sistema, encargad
 
 ```typescript
 const { object: result } = await generateObject({
-  model: google('gemini-2.5-flash'),
+  model: google("gemini-2.5-flash"),
   schema: transformationResponseSchema, // ← La IA DEBE retornar este formato
   temperature: 0.1, // Muy determinista para datos
 });
@@ -215,8 +217,8 @@ const systemPrompt = `
 ## 📄 `actions/index.ts` — Re-exportación
 
 ```typescript
-export { transcribeAudio, executeVoiceCommand } from './voice';
-export { analyzePartImage } from './vision';
+export { transcribeAudio, executeVoiceCommand } from "./voice";
+export { analyzePartImage } from "./vision";
 // ... etc
 ```
 

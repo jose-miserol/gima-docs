@@ -1,4 +1,4 @@
-# 05 — Configuración del Sistema
+# Configuración del Sistema
 
 > La carpeta `config/` centraliza TODA la configuración de la app en un solo lugar. Si necesitas cambiar un prompt, un límite de tamaño, o un modelo de IA, vienes aquí.
 
@@ -72,7 +72,10 @@ export const FEATURE_FLAGS = {
 ### ¿Cómo Decide si Mostrar la Feature?
 
 ```typescript
-export function isFeatureEnabled(feature: FeatureName, userId?: string): boolean {
+export function isFeatureEnabled(
+  feature: FeatureName,
+  userId?: string,
+): boolean {
   // 1. Feature deshabilitada globalmente → NO
   if (!config.enabled) return false;
 
@@ -124,7 +127,10 @@ export function bytesToMB(bytes: number): number {
   return Math.round((bytes / (1024 * 1024)) * 10) / 10; // Redondea a 1 decimal
 }
 
-export function exceedsLimit(sizeInBytes: number, limitInBytes: number): boolean {
+export function exceedsLimit(
+  sizeInBytes: number,
+  limitInBytes: number,
+): boolean {
   return sizeInBytes > limitInBytes;
 }
 ```
@@ -140,8 +146,8 @@ Contiene el catálogo inmutable del sistema referente a los modelos de inteligen
 ```typescript
 export const AVAILABLE_MODELS = [
   {
-    name: 'Llama 3.3 70B', // Nombre visible al usuario
-    value: 'llama-3.3-70b-versatile', // ID para la API de GROQ
+    name: "Llama 3.3 70B", // Nombre visible al usuario
+    value: "llama-3.3-70b-versatile", // ID para la API de GROQ
   },
 ] as const;
 
@@ -160,14 +166,14 @@ Constituye el núcleo de comportamiento lingüístico, ya que contiene los "prom
 
 ```typescript
 const ACRONYMS_GLOSSARY: Record<string, string> = {
-  UMA: 'Unidad Manejadora de Aire',
-  BCA: 'Bomba Centrífuga de Agua',
-  TAB: 'Tablero de Distribución Eléctrica',
-  ST: 'Subestación Transformadora',
-  GIMA: 'Gestión Integral de Mantenimiento y Activos',
-  OT: 'Orden de Trabajo',
-  MP: 'Mantenimiento Preventivo',
-  MC: 'Mantenimiento Correctivo',
+  UMA: "Unidad Manejadora de Aire",
+  BCA: "Bomba Centrífuga de Agua",
+  TAB: "Tablero de Distribución Eléctrica",
+  ST: "Subestación Transformadora",
+  GIMA: "Gestión Integral de Mantenimiento y Activos",
+  OT: "Orden de Trabajo",
+  MP: "Mantenimiento Preventivo",
+  MC: "Mantenimiento Correctivo",
 };
 ```
 
@@ -248,8 +254,8 @@ Cada herramienta de IA tiene su prompt especializado:
 ## 📄 `config/index.ts` — Re-exportación
 
 ```typescript
-export * from './models';
-export * from './server';
+export * from "./models";
+export * from "./server";
 ```
 
 💡 **¿Para qué?** Permite importar como `import { SYSTEM_PROMPT, DEFAULT_MODEL } from '@/app/config'` en lugar de dos imports separados.

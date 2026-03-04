@@ -1,4 +1,4 @@
-# 15 — Feature: AI Tools Dashboard (`features/ai-tools/`)
+# Feature: AI Tools Dashboard (`features/ai-tools/`)
 
 > Este módulo contiene el dashboard de herramientas de IA y los componentes compartidos que usan las 4 herramientas (Activity Summary, Checklist, Data Transform, Work Order Closeout).
 
@@ -42,7 +42,9 @@ Cada herramienta usa estos componentes shared así:
     <select name="maintenanceType" />
   </AIGenerationForm>
 
-  <AIPreviewCard data={generatedChecklist}>{/* Preview específico del checklist */}</AIPreviewCard>
+  <AIPreviewCard data={generatedChecklist}>
+    {/* Preview específico del checklist */}
+  </AIPreviewCard>
 
   <AIHistoryList items={previousChecklists} />
   <AIUsageStats stats={checklistStats} />
