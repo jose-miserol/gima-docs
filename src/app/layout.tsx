@@ -25,9 +25,12 @@ const banner = (
 const navbar = (
     <Navbar
         logo={
-            <span style={{ fontWeight: 700, fontSize: '1.2rem' }}>
-                <span style={{ color: '#10b981' }}>GIMA</span> Docs
-            </span>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <img src="/logo.svg" alt="GIMA Logo" style={{ height: '32px' }} />
+                <span style={{ fontWeight: 700, fontSize: '1.2rem' }}>
+                    <span style={{ color: '#0066FF' }}>GIMA</span> Docs
+                </span>
+            </div>
         }
         projectLink="https://github.com/jose-miserol/gima-docs/"
     />
