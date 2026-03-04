@@ -1,0 +1,7 @@
+{
+  "transcribe-audio": "transcribeAudio()",
+  "analyze-part-image": "analyzePartImage()",
+  "execute-voice-command": "executeVoiceCommand()",
+  "generate-checklist": "generateChecklist()",
+  "generate-summary": "generateSummary()"
+}

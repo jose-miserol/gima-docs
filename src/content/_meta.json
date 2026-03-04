@@ -3,18 +3,37 @@
     "title": "GIMA Docs",
     "type": "page"
   },
-  "getting-started": "🚀 Getting Started",
-  "conceptos": "🧠 Conceptos Fundamentales",
-  "backend": "🔧 Backend Guide (Laravel)",
-  "ai-chatbot": "💬 AI Chatbot Guide (Next.js)",
-  "frontend": "🎨 Frontend Guide",
-  "seguridad": "🛡️ Seguridad",
-  "funcionalidades": "🚀 Funcionalidades Core",
-  "performance": "⚡ Performance y Escalabilidad",
-  "deployment": "🚢 Deployment y DevOps",
-  "api-reference": "📖 API Reference",
-  "casos-estudio": "📊 Casos de Estudio",
-  "roadmap": "🔮 Roadmap y Futuro",
-  "apendices": "📎 Apéndices",
-  "manual-sistemas-temario": "📘 Temario Completo"
+  "proyecto-documentacion": {
+    "title": "Plan Completo",
+    "type": "page"
+  },
+  "manual-sistemas-temario": {
+    "title": "Temario de Referencia",
+    "type": "page"
+  },
+  "---": {
+    "type": "separator",
+    "title": "Guías Principales"
+  },
+  "getting-started": "Getting Started",
+  "conceptos": "Conceptos Fundamentales",
+  "backend": "Backend Guide",
+  "ai-chatbot": "AI Chatbot Guide",
+  "frontend": "Frontend Guide",
+  "---2": {
+    "type": "separator",
+    "title": "Arquitectura y Sistema"
+  },
+  "seguridad": "Seguridad",
+  "funcionalidades": "Funcionalidades Core",
+  "performance": "Performance y Escalabilidad",
+  "deployment": "Deployment y DevOps",
+  "---3": {
+    "type": "separator",
+    "title": "Referencias y Anexos"
+  },
+  "api-reference": "API Reference",
+  "casos-estudio": "Casos de Estudio",
+  "roadmap": "Roadmap y Futuro",
+  "apendices": "Apéndices"
 }
