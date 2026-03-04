@@ -16,14 +16,6 @@ export const metadata = {
     },
 }
 
-const banner = (
-    <Banner storageKey="gima-preview-2">
-        <span style={{ fontWeight: 500 }}>
-            🚧 GIMA Docs está en desarrollo activo — <a href="/roadmap/01-features-desarrollo" style={{ textDecoration: 'underline' }}>ver roadmap</a>
-        </span>
-    </Banner>
-)
-
 const navbar = (
     <Navbar
         logo={
@@ -74,7 +66,6 @@ export default async function RootLayout({
             </Head>
             <body className={inter.className}>
                 <Layout
-                    banner={banner}
                     pageMap={await getPageMap()}
                     docsRepositoryBase="https://github.com/jose-miserol/gima-docs"
                     footer={footer}
