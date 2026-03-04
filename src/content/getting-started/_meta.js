@@ -1,4 +1,4 @@
-{
+export default {
   "01-introduccion": "Introducción",
   "02-quickstart": "Quickstart",
   "03-instalacion": "Instalación",

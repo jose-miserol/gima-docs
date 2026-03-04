@@ -1,4 +1,4 @@
-{
+export default {
   "01-features-desarrollo": "Features en Desarrollo",
   "02-vision-largo-plazo": "Visión a Largo Plazo",
   "03-tecnologias-emergentes": "Tecnologías Emergentes"

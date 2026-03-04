@@ -1,9 +1,0 @@
-{
-  "database-overview": "Overview",
-  "database-schema-reference": "Schema Reference",
-  "database-erd-explained": "ERD Explained",
-  "row-level-security-policies": "RLS Policies",
-  "partitioning-strategy": "Partitioning",
-  "indexing-strategy": "Indexing",
-  "database-migration-guide": "Migration Guide"
-}

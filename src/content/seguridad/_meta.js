@@ -1,4 +1,4 @@
-{
+export default {
   "01-autenticacion": "Autenticación",
   "02-autorizacion": "Autorización",
   "03-seguridad-datos": "Seguridad de Datos",

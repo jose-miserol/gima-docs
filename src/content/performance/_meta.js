@@ -1,4 +1,4 @@
-{
+export default {
   "01-frontend-performance": "Optimización Frontend",
   "02-backend-performance": "Optimización Backend",
   "03-caching": "Caching Strategies",

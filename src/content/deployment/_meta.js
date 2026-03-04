@@ -1,4 +1,4 @@
-{
+export default {
   "01-estrategia": "Estrategia de Deployment",
   "02-ci-cd": "CI/CD con GitHub Actions",
   "03-database-management": "Database Management",

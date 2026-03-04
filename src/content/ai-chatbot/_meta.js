@@ -1,4 +1,4 @@
-{
+export default {
   "01-arquitectura": "Arquitectura del Chatbot",
   "02-api-chat": "API del Chat",
   "03-server-actions": "Server Actions",

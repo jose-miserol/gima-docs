@@ -1,4 +1,4 @@
-{
+export default {
   "01-vision-general": "Visión General",
   "02-arquitectura": "Arquitectura",
   "03-domain-driven-design": "Domain-Driven Design",

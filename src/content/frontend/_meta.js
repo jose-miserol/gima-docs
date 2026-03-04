@@ -1,4 +1,4 @@
-{
+export default {
   "01-design-system": "Design System",
   "02-componentes-base": "Componentes Base",
   "03-layout-navegacion": "Layout y Navegación",

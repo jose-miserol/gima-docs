@@ -1,4 +1,4 @@
-{
+export default {
   "01-primeros-pasos": "Primeros Pasos",
   "02-modelos": {
     "title": "Modelos"

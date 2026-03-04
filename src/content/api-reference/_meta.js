@@ -1,4 +1,4 @@
-{
+export default {
   "_index": "Overview API",
   "rest": {
     "title": "Rest"

@@ -1,4 +1,4 @@
-{
+export default {
   "transcribe-audio": "transcribeAudio()",
   "analyze-part-image": "analyzePartImage()",
   "execute-voice-command": "executeVoiceCommand()",

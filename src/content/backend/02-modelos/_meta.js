@@ -1,4 +1,4 @@
-{
+export default {
   "_index": "Overview de Modelos",
   "activo": "Activo",
   "articulo": "Articulo",

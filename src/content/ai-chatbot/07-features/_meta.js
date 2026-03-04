@@ -1,4 +1,4 @@
-{
+export default {
   "chat": "Feature: Chat",
   "voice-fill": "Feature: Voice Fill",
   "voice-commands": "Feature: Comandos de Voz",

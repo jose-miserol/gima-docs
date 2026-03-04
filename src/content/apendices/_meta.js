@@ -1,4 +1,4 @@
-{
+export default {
   "glosario": "Glosario de Términos",
   "referencias": "Referencias Bibliográficas",
   "diagramas": {
