@@ -1,0 +1,8 @@
+{
+  "01-vision-general": "Visión General",
+  "02-arquitectura": "Arquitectura",
+  "03-domain-driven-design": "Domain-Driven Design",
+  "04-stack-tecnologico": "Stack Tecnológico",
+  "05-modelo-datos": "Modelo de Datos",
+  "06-adrs": "ADRs"
+}
