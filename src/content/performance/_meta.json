@@ -1,0 +1,7 @@
+{
+  "01-frontend-performance": "Optimización Frontend",
+  "02-backend-performance": "Optimización Backend",
+  "03-caching": "Caching Strategies",
+  "04-monitoreo": "Monitoreo y Observabilidad",
+  "05-escalabilidad": "Escalabilidad"
+}

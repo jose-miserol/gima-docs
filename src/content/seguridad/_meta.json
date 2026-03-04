@@ -1,0 +1,8 @@
+{
+  "01-autenticacion": "Autenticación",
+  "02-autorizacion": "Autorización",
+  "03-seguridad-datos": "Seguridad de Datos",
+  "04-seguridad-ia": "Seguridad de IA",
+  "05-threat-modeling": "Threat Modeling",
+  "06-compliance": "Compliance"
+}
