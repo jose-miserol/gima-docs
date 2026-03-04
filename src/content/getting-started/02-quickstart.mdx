@@ -1,3 +1,49 @@
 # Quickstart
 
-Contenido pendiente...
+Esta guía te ayudará a poner en marcha el ecosistema GIMA en tu entorno local en menos de 5 minutos.
+
+## 🛠️ Prerequisitos Mínimos
+
+Antes de comenzar, asegúrate de tener instalado:
+
+- **PHP** ≥ 8.2 e **Nginx/Apache**
+- **Composer** ≥ 2.x
+- **Node.js** ≥ 20 (LTS recomendado)
+- **PostgreSQL** ≥ 15 (o SQLite para pruebas rápidas)
+
+## ⚡ Pasos Rápidos (Mono-repo)
+
+Si tienes todos los recursos en una carpeta raíz, sigue este flujo:
+
+### 1. Preparar el Backend (Laravel)
+
+```bash
+cd gima-backend
+composer install
+cp .env.example .env
+php artisan key:generate
+php artisan migrate --seed
+php artisan serve
+```
+
+### 2. Preparar el Chatbot de IA (Next.js)
+
+```bash
+cd ../gima-ai-chatbot
+npm install
+cp .env.example .env.local
+npm run dev
+```
+
+### 3. Preparar el Frontend Principal (Next.js)
+
+```bash
+cd ../gima-project
+npm install
+npm run dev
+```
+
+---
+
+> [!NOTE]
+> Por defecto, el backend correrá en `http://localhost:8000` y las aplicaciones de Next.js en `http://localhost:3000` y `http://localhost:3001`. Asegúrate de verificar los puertos en tus archivos `.env`.

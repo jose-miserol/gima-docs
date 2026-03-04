@@ -1,3 +1,40 @@
-# Configuración de Entorno
+# Configuración de Envontorno
 
-Contenido pendiente...
+La mayoría de las funcionalidades avanzadas de GIMA (especialmente la IA) dependen de una configuración correcta de las variables de entorno.
+
+## 🗝️ Variables Críticas para la IA
+
+Ambos frontends (`gima-ai-chatbot` y `gima-project`) requieren acceso a servicios de IA:
+
+### GROQ API (Llama 3.3 70B)
+
+Utilizada para el procesamiento de texto ultrarápido en el chat.
+
+- `GROQ_API_KEY`: Tu clave de API de Groq Cloud.
+
+### Google Gemini (Vision & Audio)
+
+Utilizada para el procesamiento multimodal (transcripción de voz y análisis de imágenes).
+
+- `GOOGLE_GENERATIVE_AI_API_KEY`: Tu clave de API desde Google AI Studio.
+
+## 🔗 Conectividad entre Servicios
+
+### Backend API URL
+
+Define dónde se encuentra el servidor Laravel para que Next.js pueda consumir los datos.
+
+- `NEXT_PUBLIC_API_URL`: Generalmente `http://localhost:8000/api` en desarrollo.
+
+## 📄 Resumen de Archivos .env
+
+| Repositorio       | Archivo Requerido | Propósito                                    |
+| :---------------- | :---------------- | :------------------------------------------- |
+| `gima-backend`    | `.env`            | Credenciales de DB, App Key, Swagger config. |
+| `gima-ai-chatbot` | `.env.local`      | API Keys de IA (Groq/Gemini), Auth secrets.  |
+| `gima-project`    | `.env.local`      | API Keys de IA, URL del Backend.             |
+
+---
+
+> [!WARNING]
+> Nunca subas tus archivos `.env` al repositorio. Asegúrate de que estén incluidos en el `.gitignore`.

@@ -1,3 +1,75 @@
-# Instalación
+# Instalación Detallada
 
-Contenido pendiente...
+Esta sección profundiza en los pasos necesarios para configurar cada componente del ecosistema GIMA de forma individual y robusta.
+
+## 📦 Compendio de Repositorios
+
+GIMA está compuesto por tres repositorios principales que deben interactuar entre sí:
+
+| Repositorio       | Tecnología | Función Principal                                    |
+| :---------------- | :--------- | :--------------------------------------------------- |
+| `gima-backend`    | Laravel 12 | Persistencia de datos, lógica de negocio y API REST. |
+| `gima-ai-chatbot` | Next.js 16 | Cliente de chat con integración profunda de IA.      |
+| `gima-project`    | Next.js 16 | Dashboard administrativo y gestión de activos.       |
+
+---
+
+## 🐘 1. Configuración del Backend (Laravel)
+
+### Instalación de Dependencias PHP
+
+```bash
+composer install
+```
+
+### Configuración de la Base de Datos
+
+1. Crea una base de datos en PostgreSQL llamada `gima`.
+2. Edita el archivo `.env` con tus credenciales:
+   ```env
+   DB_CONNECTION=pgsql
+   DB_HOST=127.0.0.1
+   DB_PORT=5432
+   DB_DATABASE=gima
+   DB_USERNAME=tu_usuario
+   DB_PASSWORD=tu_contraseña
+   ```
+
+### Inicialización
+
+```bash
+php artisan key:generate
+php artisan migrate --seed
+php artisan l5-swagger:generate # Generar documentación de Swagger
+```
+
+---
+
+## 🤖 2. Configuración del Chatbot (Next.js)
+
+### Instalación de Dependencias Node.js
+
+```bash
+npm install
+```
+
+### Husky y Calidad de Código
+
+El proyecto utiliza **Husky** para asegurar que el código cumple con los estándares de linting antes de cada commit. Se inicializará automáticamente al correr `npm install`.
+
+### Ejecución en Desarrollo
+
+```bash
+npm run dev
+```
+
+---
+
+## 🌐 3. Configuración del Frontend Administrativo
+
+Sigue los mismos pasos que el Chatbot para la instalación de dependencias y ejecución:
+
+```bash
+npm install
+npm run dev
+```
