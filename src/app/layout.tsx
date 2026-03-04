@@ -54,6 +54,7 @@ export default async function RootLayout({
             </Head>
             <body className={inter.className}>
                 <Layout
+                    navbar={navbar}
                     pageMap={await getPageMap()}
                     docsRepositoryBase="https://github.com/jose-miserol/gima-docs"
                     footer={footer}

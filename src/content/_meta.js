@@ -1,7 +1,5 @@
 export default {
-  index: {
-    title: "GIMA Docs",
-  },
+  index: "GIMA Docs",
   "proyecto-documentacion": {
     title: "Plan Completo",
     type: "page",
