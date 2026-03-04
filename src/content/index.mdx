@@ -2,18 +2,41 @@
 title: "GIMA Docs"
 ---
 
-# Documentación de GIMA
+import { Cards } from "nextra/components";
 
-Bienvenido a la documentación oficial del sistema **GIMA (Gestión Integral de Mantenimiento y Activos)**.
+# GIMA Documentation
 
-Esta documentación cubre todos los aspectos del ecosistema GIMA:
+Use the GIMA platform to manage maintenance operations, assets, and intelligent workflows powered by AI across your entire organization.
 
-- **AI Chatbot**: Aplicación principal en Next.js
-- **Backend API**: Sistema central en Laravel
-- **Frontend**: Componentes e interfaces de usuario
-- **Infraestructura**: Despliegue, seguridad y arquitectura
+[Getting Started →](/getting-started/01-introduccion) [Explore the API →](/api-reference)
 
-## Guías Rápidas
+## Getting started
 
-- [Arquitectura del Chatbot](./ai-chatbot/01-archivos-raiz)
-- [Modelos del Backend](./backend/Activo)
+To get started, read the [Quickstart guide](/getting-started/02-quickstart) to set up the complete GIMA ecosystem in minutes. Configure your [environment variables](/getting-started/04-configuracion-entorno), then explore the individual platform components.
+
+[Setup your environment →](/getting-started/04-configuracion-entorno)
+
+---
+
+## Platform Guides
+
+<Cards>
+  <Cards.Card title="🤖 AI Chatbot" href="/ai-chatbot/01-arquitectura" />
+  <Cards.Card title="⚙️ Backend API" href="/backend/01-primeros-pasos" />
+  <Cards.Card title="🎨 Frontend" href="/frontend/01-design-system" />
+  <Cards.Card title="🔐 Seguridad" href="/seguridad/01-autenticacion" />
+  <Cards.Card
+    title="📊 Funcionalidades"
+    href="/funcionalidades/01-ordenes-trabajo"
+  />
+  <Cards.Card title="🚀 Deployment" href="/deployment/01-estrategia" />
+</Cards>
+
+---
+
+## Core Concepts
+
+- **[Arquitectura](/conceptos/02-arquitectura)** — Understand the three-tier architecture of the GIMA ecosystem.
+- **[Stack Tecnológico](/conceptos/04-stack-tecnologico)** — Next.js 16, Laravel 12, Tailwind 4, and Groq/Gemini AI.
+- **[Modelo de Datos](/conceptos/05-modelo-datos)** — Entity relationships and database schema.
+- **[ADRs](/conceptos/06-adrs)** — Architectural Decision Records documenting key choices.

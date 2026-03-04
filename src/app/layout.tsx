@@ -17,18 +17,32 @@ export const metadata = {
 }
 
 const banner = (
-    <Banner storageKey="gima-preview-1">
-        🚀 GIMA Docs - Versión Preview
+    <Banner storageKey="gima-preview-2">
+        <span style={{ fontWeight: 500 }}>
+            🚧 GIMA Docs está en desarrollo activo — <a href="/roadmap/01-features-desarrollo" style={{ textDecoration: 'underline' }}>ver roadmap</a>
+        </span>
     </Banner>
 )
 
 const navbar = (
     <Navbar
         logo={
-            <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <img src="/logo.svg" alt="GIMA Logo" style={{ height: '32px' }} />
-                <span style={{ fontWeight: 700, fontSize: '1.2rem' }}>
-                    <span style={{ color: '#0066FF' }}>GIMA</span> Docs
+            <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                <div style={{
+                    width: '28px',
+                    height: '28px',
+                    borderRadius: '6px',
+                    background: '#10b981',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    color: '#ffffff',
+                    fontWeight: 800,
+                    fontSize: '14px',
+                    letterSpacing: '-0.05em',
+                }}>G</div>
+                <span style={{ fontWeight: 600, fontSize: '1rem', letterSpacing: '-0.02em' }}>
+                    GIMA <span style={{ fontWeight: 400, opacity: 0.5 }}>Docs</span>
                 </span>
             </div>
         }
@@ -38,10 +52,9 @@ const navbar = (
 
 const footer = (
     <Footer>
-        <span>
-            © {new Date().getFullYear()}{' '}
-            <strong style={{ color: '#10b981' }}>GIMA Docs</strong>. Built with Nextra.
-        </span>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', width: '100%', fontSize: '0.8125rem', opacity: 0.6 }}>
+            <span>© {new Date().getFullYear()} GIMA. Built with Nextra.</span>
+        </div>
     </Footer>
 )
 
