@@ -19,21 +19,9 @@ export const metadata = {
 const navbar = (
     <Navbar
         logo={
-            <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                <div style={{
-                    width: '28px',
-                    height: '28px',
-                    borderRadius: '6px',
-                    background: '#10b981',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    color: '#ffffff',
-                    fontWeight: 800,
-                    fontSize: '14px',
-                    letterSpacing: '-0.05em',
-                }}>G</div>
-                <span style={{ fontWeight: 600, fontSize: '1rem', letterSpacing: '-0.02em' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <img src="/logo.svg" alt="GIMA Logo" style={{ height: '32px' }} />
+                <span style={{ fontWeight: 600, fontSize: '1rem', letterSpacing: '-0.02em', color: 'var(--gima-text-primary)' }}>
                     GIMA <span style={{ fontWeight: 400, opacity: 0.5 }}>Docs</span>
                 </span>
             </div>
