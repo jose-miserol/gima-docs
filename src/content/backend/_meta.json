@@ -1,30 +1,11 @@
 {
-  "api-routes": "Referencia de Rutas",
-  "api-overview-and-contracts": "API Overview",
-  "backend-coding-standards": "Coding Standards",
-  "backend-async-architecture": "Async Architecture",
-  "backend-async-jobs-reference": "Jobs Reference",
-  "backend-critical-paths": "Critical Paths",
-  "backend-testing-strategy": "Testing Strategy",
-  "---": {
-    "type": "separator"
+  "01-primeros-pasos": "Primeros Pasos",
+  "02-modelos": {
+    "title": "Modelos"
   },
-  "Activo": "Modelo: Activo",
-  "Articulo": "Modelo: Articulo",
-  "Mantenimiento": "Modelo: Mantenimiento",
-  "Repuesto": "Modelo: Repuesto",
-  "User": "Modelo: Usuario",
-  "Reporte": "Modelo: Reporte",
-  "CalendarioMantenimiento": "Modelo: Calendario",
-  "SesionesMantenimiento": "Modelo: Sesiones",
-  "HistorialLogs": "Modelo: Auditoría Logs",
-  "---2": {
-    "type": "separator"
-  },
-  "Direccion": "Modelo: Sede / Dirección",
-  "Ubicacion": "Modelo: Ubicación",
-  "Proveedor": "Modelo: Proveedor",
-  "MaterialArticulo": "Modelo: Materiales",
-  "RepuestoUsado": "Modelo: Repuestos Usados",
-  "Notificacion": "Modelo: Notificación"
+  "03-api-rest": "API REST (Endpoints)",
+  "04-autenticacion": "Autenticación y Roles",
+  "05-migraciones-seeds": "Migraciones y Seeds",
+  "06-validacion": "Validación con Form Requests",
+  "07-testing-backend": "Testing Backend"
 }

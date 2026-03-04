@@ -1,0 +1,18 @@
+{
+  "_index": "Overview de Modelos",
+  "activo": "Activo",
+  "articulo": "Articulo",
+  "calendariomantenimiento": "CalendarioMantenimiento",
+  "direccion": "Direccion",
+  "historiallogs": "HistorialLogs",
+  "mantenimiento": "Mantenimiento",
+  "materialarticulo": "MaterialArticulo",
+  "notificacion": "Notificacion",
+  "proveedor": "Proveedor",
+  "reporte": "Reporte",
+  "repuesto": "Repuesto",
+  "repuestousado": "RepuestoUsado",
+  "sesionesmantenimiento": "SesionesMantenimiento",
+  "ubicacion": "Ubicacion",
+  "user": "User"
+}
